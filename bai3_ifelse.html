@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>Days in Month</title>
+</head>
+<body>
+  <script>
+    var month = prompt("Nhập vào một trong 12 tháng (1-12):");
+
+    // Chuyển đổi chuỗi nhập từ prompt thành số
+    month = parseInt(month);
+
+    if (isNaN(month) || month < 1 || month > 12) {
+      document.write("Vui lòng nhập một số từ 1 đến 12.");
+    } else {
+      var daysInMonth;
+
+      if (month === 2) {
+        var year = prompt("Nhập vào năm để kiểm tra nhuận (nếu là tháng 2):");
+        year = parseInt(year);
+
+        if (isNaN(year)) {
+          document.write("Vui lòng nhập một năm hợp lệ.");
+        } else {
+          if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+            daysInMonth = 29;
+          } else {
+            daysInMonth = 28;
+          }
+          document.write("Tháng " + month + " có " + daysInMonth + " ngày.");
+        }
+      } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+        daysInMonth = 30;
+        document.write("Tháng " + month + " có " + daysInMonth + " ngày.");
+      } else {
+        daysInMonth = 31;
+        document.write("Tháng " + month + " có " + daysInMonth + " ngày.");
+      }
+    }
+  </script>
+</body>
+</html>

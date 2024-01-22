@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Triangle Type</title>
+</head>
+<body>
+  <script>
+    var side1 = prompt("Nhập chiều dài cạnh thứ nhất:");
+    var side2 = prompt("Nhập chiều dài cạnh thứ hai:");
+    var side3 = prompt("Nhập chiều dài cạnh thứ ba:");
+
+    // Chuyển đổi chuỗi nhập từ prompt thành số
+    side1 = parseFloat(side1);
+    side2 = parseFloat(side2);
+    side3 = parseFloat(side3);
+
+    if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
+      document.write("Vui lòng nhập chiều dài cạnh hợp lệ.");
+    } else {
+      if (side1 + side2 > side3 && side2 + side3 > side1 && side3 + side1 > side2) {
+        if (side1 === side2 && side2 === side3) {
+          document.write("Tam giác đều");
+        } else if (side1 === side2 || side2 === side3 || side3 === side1) {
+          document.write("Tam giác cân");
+        } else if (side1*side1 + side2*side2 === side3*side3 || 
+                   side2*side2 + side3*side3 === side1*side1 || 
+                   side3*side3 + side1*side1 === side2*side2) {
+          document.write("Tam giác vuông");
+        } else {
+          document.write("Tam giác thường");
+        }
+      } else {
+        document.write("Ba cạnh không tạo thành một tam giác.");
+      }
+    }
+  </script>
+</body>
+</html>
